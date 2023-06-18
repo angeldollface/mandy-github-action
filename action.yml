@@ -1,0 +1,19 @@
+name: "Mandy site build."
+description: ""
+inputs:
+  directory:
+    description: "Mandy-powered site to build."
+    required: true
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - name: "Installing Rust."
+      uses: "actions-rs/toolchain@v1"
+      with:
+        toolchain: "stable"
+      run: "cargo install --git https://github.com/angeldollface/mandy.git"
+      shell: "bash"
+    - name: "Building the site."
+      run: "mandy comp {{ inputs.directory }}"
+      shell: "bash"
