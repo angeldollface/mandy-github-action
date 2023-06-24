@@ -8,4 +8,5 @@ runs:
       with:
         toolchain: "stable"
     - name: "Install Mandy."
+      shell: bash
       run: "cargo install --git https://github.com/angeldollface/mandy.git"
