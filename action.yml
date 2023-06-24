@@ -7,5 +7,5 @@ runs:
       uses: "actions-rs/toolchain@v1"
       with:
         toolchain: "stable"
+    - name: "Install Mandy."
       run: "cargo install --git https://github.com/angeldollface/mandy.git"
-      shell: "bash"
