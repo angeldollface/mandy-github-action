@@ -1,5 +1,7 @@
 name: "Mandy site build."
-description: ""
+description: "A GitHub action to build your Mandy-powered project!"
+icon: "activity"
+color: "purple"
 runs:
   using: "composite"
   steps:
