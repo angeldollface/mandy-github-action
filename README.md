@@ -21,8 +21,9 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
-      - name: "Run Mandy."
+      - name: "Build the site."
         uses: angeldollface/mandy-github-action@v1
+        run: mandy -c ./
 ```
 - 5.) You could specify a directory by adding an attribute to the `"Run Mandy"` step by adding this line: `directory: "some_directory"`.
 - 6.) This will build your Mandy-powered site into `dist`.
