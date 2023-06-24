@@ -15,5 +15,5 @@ runs:
       run: "cargo install --git https://github.com/angeldollface/mandy.git"
       shell: "bash"
     - name: "Building the site."
-      run: "mandy comp {{ inputs.directory }}"
+      run: "mandy -c {{ inputs.directory }}"
       shell: "bash"
