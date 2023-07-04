@@ -14,7 +14,7 @@ To use this GitHub Action for your own Mandy-powered project, execute these step
 - 2.) Inside this directory, create another directory called `workflows`.
 - 3.) Inside `workflows` create a file called `main.yml`.
 - 4.) Put the following into `main.yml`
-  - For using stable releases of Mandy:
+- For using stable releases of Mandy:
 
 ```YML
 on: [push]
