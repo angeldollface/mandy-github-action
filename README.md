@@ -16,6 +16,7 @@ To use this GitHub Action for your own Mandy-powered project, execute these step
 - 4.) Put the following into `main.yml`:
 ```YML
 on: [push]
+name: Mandy Site Build CI
 env:
   MANDY_ENV: production
 name: Mandy CI
@@ -24,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: angeldollface/mandy-github-action@v.0.1
+      - uses: angeldollface/mandy-github-action@v.0.1.0
       - name: "Build the Mandy site"
         run: mandy -c .
 ```
