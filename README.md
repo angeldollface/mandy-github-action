@@ -13,7 +13,9 @@ To use this GitHub Action for your own Mandy-powered project, execute these step
 - 1.) Go to your Mandy project's root directory and create a directory called `.github`.
 - 2.) Inside this directory, create another directory called `workflows`.
 - 3.) Inside `workflows` create a file called `main.yml`.
-- 4.) Put the following into `main.yml`:
+- 4.) Put the following into `main.yml`
+  - For using stable releases of Mandy:
+
 ```YML
 on: [push]
 name: Mandy Site Build CI
@@ -29,6 +31,24 @@ jobs:
       - name: "Build the Mandy site"
         run: mandy -c .
 ```
+  - For using unstable releases of Mandy:
+
+```YML
+on: [push]
+name: Mandy Site Build CI
+env:
+  MANDY_ENV: production
+name: Mandy CI
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: angeldollface/mandy-github-action@dev
+      - name: "Build the Mandy site"
+        run: mandy -c .
+```
+
 - 5.) This will build your Mandy-powered site into `dist`.
 - 6.) You can also add a badge to your `README`, just like with other actions.
 - 7.) Enjoy! :heart:
