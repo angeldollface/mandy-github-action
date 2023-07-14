@@ -1,8 +1,4 @@
 name: "Mandy site build."
-env:
-  MANDY_VERSION: "0.3.1"
-  ARCH: "x86_64-unknown-linux-gnu"
-  TARGET: "mandy"
 description: "A GitHub action to build your Mandy-powered project!"
 icon: "activity"
 color: "purple"
@@ -13,10 +9,11 @@ runs:
       shell: bash
       run: "wget https://github.com/angeldollface/mandy/releases/download/v.$MANDY_VERSION/${EXEC_FILE}"
     - name: "Install Mandy: Change permissions of executable."
+      shell: bash
       run: "chmod a+x mandy-${MANDY_VERSION}-${ARCH}"
     - name: "Move the exeutable to a location on the PATH."
+      shell: bash
       run: "mv mandy-${MANDY_VERSION}-${ARCH} /usr/local/bin"
     - name: "Verify installation."
       shell: bash
       run: "mandy -v"
-      
