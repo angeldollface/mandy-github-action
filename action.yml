@@ -1,17 +1,22 @@
 name: "Mandy site build."
+env:
+  MANDY_VERSION: "0.3.1"
+  ARCH: "x86_64-unknown-linux-gnu"
+  TARGET: "mandy"
 description: "A GitHub action to build your Mandy-powered project!"
 icon: "activity"
 color: "purple"
 runs:
   using: "composite"
   steps:
-    - name: "Installing Rust."
-      uses: "actions-rs/toolchain@v1"
-      with:
-        toolchain: "stable"
-    - name: "Install Mandy."
+    - name: "Install Mandy: Get the latest executable."
       shell: bash
-      run: "bash actions.sh"
+      run: "wget https://github.com/angeldollface/mandy/releases/download/v.$MANDY_VERSION/${EXEC_FILE}"
+    - name: "Install Mandy: Change permissions of executable."
+      run: "chmod a+x mandy-${MANDY_VERSION}-${ARCH}"
+    - name: "Move the exeutable to a location on the PATH."
+      run: "mv mandy-${MANDY_VERSION}-${ARCH} /usr/local/bin"
     - name: "Verify installation."
       shell: bash
       run: "mandy -v"
+      
