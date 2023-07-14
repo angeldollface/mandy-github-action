@@ -1,4 +1,4 @@
-MANDY_VERSION="0.3.0"
+MANDY_VERSION="0.3.1"
 ARCH="x86_64-unknown-linux-gnu"
 TARGET="mandy"
 EXEC_FILE="mandy-${MANDY_VERSION}-${ARCH}"
