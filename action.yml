@@ -2,12 +2,15 @@ name: "Mandy site build."
 description: "A GitHub action to build your Mandy-powered project!"
 icon: "activity"
 color: "purple"
+env:
+  MANDY_VERSION: "0.3.1"
+  ARCH: "x86_64-unknown-linux-gnu"
 runs:
   using: "composite"
   steps:
     - name: "Install Mandy: Get the latest executable."
       shell: bash
-      run: "wget https://github.com/angeldollface/mandy/releases/download/v.$MANDY_VERSION/${EXEC_FILE}"
+      run: "wget https://github.com/angeldollface/mandy/releases/download/v.$MANDY_VERSION/mandy-$MANDY_VERSION-$ARCH"
     - name: "Install Mandy: Change permissions of executable."
       shell: bash
       run: "chmod a+x mandy-${MANDY_VERSION}-${ARCH}"
