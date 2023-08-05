@@ -4,7 +4,7 @@
 
 ## ABOUT :books:
 
-This repository contains the source code for compiling Mandy-powered websites! To learn how to use this GitHub Action for your own Mandy project, read the section below! You can find the repository for the Mandy project [here](https://github.com/angeldollface/mandy).
+This repository contains the source code for a GitHub Action for compiling Mandy-powered websites! To learn how to use this GitHub Action for your own Mandy project, read the section below! You can find the repository for the Mandy project [here](https://github.com/angeldollface/mandy).
 
 ## USAGE :hammer_and_pick:
 
@@ -14,6 +14,7 @@ To use this GitHub Action for your own Mandy-powered project, execute these step
 - 2.) Inside this directory, create another directory called `workflows`.
 - 3.) Inside `workflows` create a file called `main.yml`.
 - 4.) Put the following into `main.yml`
+
 - For using stable releases of Mandy:
 
 ```YML
@@ -27,11 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: angeldollface/mandy-github-action@v.0.3.1
+      - uses: angeldollface/mandy-github-action@v.0.3.3
       - name: "Build the Mandy site"
         run: mandy -c .
 ```
-  - For using unstable releases of Mandy:
+- For using unstable releases of Mandy:
 
 ```YML
 on: [push]
@@ -49,14 +50,13 @@ jobs:
         run: mandy -c .
 ```
 
-- 5.) This will build your Mandy-powered site into `dist`.
+- 5.) This will build your Mandy-powered site into a directory called `dist`.
 - 6.) You can also add a badge to your `README`, just like with other actions.
 - 7.) Enjoy! :heart:
 
 ## STUCK OR CONFUSED? :thinking:
 
-- You can open an issue in this repository if you're stuck or confused.
-- You can join the official Mandy Discord Server [here](https://discord.gg/VR7eZFrf).
+You can open an issue in this repository if you're stuck or confused or check out the [help page](https://angeldollface.art/mandys-house/content/project/).
 
 ## NOTE :scroll:
 

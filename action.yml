@@ -11,4 +11,4 @@ runs:
         toolchain: "stable"
     - name: "Install Mandy."
       shell: bash
-      run: "cargo install --git https://github.com/angeldollface/mandy.git mandy-bin --tag v.0.3.2"
+      run: "cargo install --git https://github.com/angeldollface/mandy.git mandy-bin --tag v.0.3.3"
