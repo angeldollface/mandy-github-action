@@ -1,14 +1,20 @@
-name: "Install Mandy."
+name: "Mandy SSG GitHub Action"
 description: "A GitHub action to build your Mandy-powered project!"
 icon: "activity"
 color: "purple"
 runs:
   using: "composite"
+  runs-on: ubuntu-latest
+  env:
+    version: 0.3.3
   steps:
-    - name: "Installing Rust."
-      uses: "actions-rs/toolchain@v1"
-      with:
-        toolchain: "stable"
+    - name: "Install WGet."
+      run: sudo apt-get update && sudo apt-get install wget
+    - name: "Fetch the latest version of Mandy."
+      run: wget https://github.com/angeldollface/mandy/releases/download/$version/mandy-$version-x86_64-unknown-linux-gnu
+    - name: "Rename the Mandy executable."
+      run: mv mandy-0.3.3-x86_64-unknown-linux-gnu mandy
+    - name: "Change the permissions of the executable."
+      run: chmod a+x mandy
     - name: "Install Mandy."
-      shell: bash
-      run: "cargo install --git https://github.com/angeldollface/mandy.git mandy-bin --tag v.0.3.3"
+      run: mv mandy /usr/local/bin
