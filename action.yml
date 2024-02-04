@@ -6,15 +6,15 @@ runs:
   using: "composite"
   runs-on: ubuntu-latest
   env:
-    version: 0.3.3
+    version: 0.3.4
   steps:
     - name: "Install WGet."
       run: sudo apt-get update && sudo apt-get install wget
     - name: "Fetch the latest version of Mandy."
       run: wget https://github.com/angeldollface/mandy/releases/download/$version/mandy-$version-x86_64-unknown-linux-gnu
     - name: "Rename the Mandy executable."
-      run: mv mandy-0.3.3-x86_64-unknown-linux-gnu mandy
+      run: mv mandy-0.3.4-x86_64-unknown-linux-gnu mandy
     - name: "Change the permissions of the executable."
       run: chmod a+x mandy
     - name: "Install Mandy."
-      run: mv mandy /usr/local/bin
+      run: sudo mv mandy /usr/local/bin
