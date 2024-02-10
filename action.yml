@@ -6,8 +6,11 @@ runs:
   using: "composite"
   steps:
     - name: "Install WGet."
+      shell: bash
       run: sudo apt-get install wget
     - name: "Download Mandy."
+      shell: bash
       run: wget "https://github.com/angeldollface/mandy/releases/download/v.0.3.4/mandy-0.3.4-x86_64-unknown-linux-gnu"
     - name: "Rename Mandy and install."
+      shell: bash
       run: mv mandy-0.3.4-x86_64-unknown-linux-gnu mandy && chmod a+x mandy && sudo mv mandy /usr/bin
